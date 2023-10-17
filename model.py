@@ -2,10 +2,15 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, mean_squared_error
 import pickle
 
-def RandomForest(X_train, y_train, X_test, y_test):
+def model(X_train:pd.DataFrame, y_train:pd.DataFrame):
     clf = RandomForestClassifier(n_estimators=100, random_state=42)
     clf.fit(X_train, y_train)
-    y_pred = clf.predict(X_test)
+    return clf
+
+def predict(X_validate:pd.DataFrame, clf:RandomForestClassifier):
+    y_pred = clf.predict(X_validate)
     accuracy = accuracy_score(y_test, y_pred)
-    print("Accuracy:",accuracy)
-    pickle.dump(clf, open('model.sav', 'wb'))
+    return accuracy
+    
+def dump(clf:RandomForestClassifier):
+    pickle.dump(clf, open('model.pkl', 'wb'))
