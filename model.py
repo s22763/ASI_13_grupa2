@@ -2,7 +2,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, mean_squared_error
 import pickle
 
-def model(X_train:pd.DataFrame, y_train:pd.DataFrame):
+def create_model(X_train:pd.DataFrame, y_train:pd.DataFrame):
     clf = RandomForestClassifier(n_estimators=100, random_state=42)
     clf.fit(X_train, y_train)
     return clf
@@ -12,5 +12,5 @@ def predict(X_validate:pd.DataFrame, clf:RandomForestClassifier):
     accuracy = accuracy_score(y_test, y_pred)
     return accuracy
     
-def savemodel(clf:RandomForestClassifier):
+def save_model(clf:RandomForestClassifier):
     pickle.dump(clf, open('model.pkl', 'wb'))
