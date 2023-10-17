@@ -7,9 +7,9 @@ def create_model(X_train:pd.DataFrame, y_train:pd.DataFrame):
     clf.fit(X_train, y_train)
     return clf
 
-def predict(X_validate:pd.DataFrame, clf:RandomForestClassifier):
+def predict(X_validate:pd.DataFrame, y_validate:pd.DataFrame, clf:RandomForestClassifier):
     y_pred = clf.predict(X_validate)
-    accuracy = accuracy_score(y_test, y_pred)
+    accuracy = accuracy_score(y_validate, y_pred)
     return accuracy
     
 def save_model(clf:RandomForestClassifier):
