@@ -9,4 +9,7 @@ def preprocess(df:pd.DataFrame):
     for column in X.select_dtypes(include=["object"]).columns:
         label_encoders[column] = LabelEncoder()
         X[column] = label_encoders[column].fit_transform(X[column])
-    return train_test_split(X, y, test_size=0.15, random_state=42) # return X_train, X_test, y_train, y_test
+    X_train, X_split, y_train, y_split = train_test_split(X, y, test_size=0.3, random_state=random_state)
+    X_test, X_validate, y_test, y_validate = train_test_split(X_split, y_split, test_size=0.5, random_state=random_state)
+    
+    return X_train, X_test, X_validate, y_train, y_test, y_validate
