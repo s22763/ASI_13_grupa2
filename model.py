@@ -12,5 +12,5 @@ def predict(X_validate:pd.DataFrame, clf:RandomForestClassifier):
     accuracy = accuracy_score(y_test, y_pred)
     return accuracy
     
-def dump(clf:RandomForestClassifier):
+def savemodel(clf:RandomForestClassifier):
     pickle.dump(clf, open('model.pkl', 'wb'))
