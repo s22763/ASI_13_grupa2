@@ -1,1 +1,7 @@
 random_state: 42
+configg: {
+    "learning_rate": 0.02,
+    "architecture": "CNN",
+    "dataset": "CIFAR-100",
+    "epochs": 10,
+    }

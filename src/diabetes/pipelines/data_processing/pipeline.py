@@ -17,6 +17,6 @@ def create_pipeline(**kwargs) -> Pipeline:
                 inputs=['diabetes_predictions', 'params:random_state'],
                 outputs=['X_train', 'X_test', 'X_validate', 'y_train', 'y_test', 'y_validate'],
                 name='preprocess_diabetes_predictions_node'
-            ),
+            )
         ]
     )

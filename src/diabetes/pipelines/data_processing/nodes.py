@@ -11,7 +11,7 @@ def init_wandb():
     wandb.init(
     project="asi-2",
     config={
-    "learning_rate": 0.02,
+    "learning_rate": 3,
     "architecture": "CNN",
     "dataset": "CIFAR-100",
     "epochs": 10,
