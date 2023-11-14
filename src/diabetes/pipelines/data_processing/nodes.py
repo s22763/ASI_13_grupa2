@@ -1,11 +1,12 @@
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
+from autogluon.tabular import TabularDataset, TabularPredictor
 import wandb
 
 
-def download() -> pd.DataFrame:
-    return pd.read_csv('https://raw.githubusercontent.com/s22763/ASI_13_grupa2/main/diabetes_prediction_dataset.csv')
+def download():
+    return TabularDataset('https://raw.githubusercontent.com/s22763/ASI_13_grupa2/main/diabetes_prediction_dataset.csv')
 
 def init_wandb():
     wandb.init(
@@ -18,9 +19,10 @@ def init_wandb():
     })
     
     
-def preprocess(df:pd.DataFrame, random_state:int):
-    X = df.drop("diabetes", axis=1)  # Replace "target_column_name" with the actual name of your target column.
+def preprocess(df , random_state:int):   
+    #X = df.drop("diabetes", axis=1)  # Replace "target_column_name" with the actual name of your target column.
     y = df["diabetes"]
+    X = df
     init_wandb()
     label_encoders = {}
     for column in X.select_dtypes(include=["object"]).columns: # replace "object" with "category"
