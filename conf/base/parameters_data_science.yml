@@ -11,4 +11,4 @@ model_options:
     - company_rating
     - review_scores_rating
 
-model_type: 'forest'
+#model_type: 'forest'

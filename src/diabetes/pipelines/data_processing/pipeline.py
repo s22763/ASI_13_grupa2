@@ -8,7 +8,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         [
             node(
                 func=download,
-                inputs=['params:host','params:database','params:user','params:password'],
+                inputs=['params:host','params:port','params:database','params:user','params:password'],
                 outputs='diabetes_predictions',
                 name='download_diabetes_predictions_node'
             ),

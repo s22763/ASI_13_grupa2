@@ -1,0 +1,56 @@
+{
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.10.0",
+    "heartbeatAt": "2023-12-12T02:56:11.531955",
+    "startedAt": "2023-12-12T02:56:09.691794",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "run",
+        "--params",
+        "model_type=forest"
+    ],
+    "state": "running",
+    "program": "-m __main__",
+    "codePathLocal": null,
+    "git": {
+        "remote": "https://github.com/s22763/ASI_13_grupa2.git",
+        "commit": "1541199d1a528118db6868306db5904e62aa261f"
+    },
+    "email": "71849463+easyrider863000@users.noreply.github.com",
+    "root": "D:/PY Projects/pjatk/asi/streamlit/ASI_13_grupa2",
+    "host": "LAPTOP-BR05KG5L",
+    "username": "user",
+    "executable": "D:\\PY Projects\\venv\\Scripts\\python.exe",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2808.0,
+        "min": 0.0,
+        "max": 2808.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2808.0,
+            "min": 0.0,
+            "max": 2808.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 919.4101524353027,
+            "used": 826.3140869140625
+        }
+    },
+    "gpu": "NVIDIA GeForce GTX 1050 Ti",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1050 Ti",
+            "memory_total": 4294967296
+        }
+    ],
+    "memory": {
+        "total": 15.886077880859375
+    }
+}

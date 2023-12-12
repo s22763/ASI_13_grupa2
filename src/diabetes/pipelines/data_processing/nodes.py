@@ -8,8 +8,8 @@ from sqlalchemy import create_engine
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
-def download(host, database, user, password):
-    conn = psycopg2.connect(host=host, database=database, user=user, password=password)
+def download(host, port, database, user, password):
+    conn = psycopg2.connect(host=host, database=database, user=user, password=password, port=port)
     sql_query = 'SELECT * FROM health_data'
     df = pd.read_sql(sql_query, conn)
     conn.close()   
@@ -21,7 +21,7 @@ def init_wandb(configg):
     config=configg)
     
     
-def preprocess(df , random_state:int, constring):   
+def preprocess(df , random_state:int, constring):
     #X = df.drop("diabetes", axis=1)  # Replace "target_column_name" with the actual name of your target column.
     y = df["diabetes"]
     X = df

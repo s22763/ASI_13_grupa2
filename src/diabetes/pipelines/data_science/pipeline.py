@@ -4,6 +4,7 @@ from .nodes import create_model, predict, save_model
 
 
 def create_pipeline(**kwargs) -> Pipeline:
+    print("\n-------------------\n\n\n\n--------------\n\n\n")
     return pipeline(
         [
             node(
