@@ -8,7 +8,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         [
             node(
                 func=create_model,
-                inputs=["X_train", "y_train",'params:model_type'],
+                inputs=["X_train", "y_train",'params:model_type','params:hyperparameters'],
                 outputs="regressor",
                 name="create_model_node",
             ),
@@ -20,7 +20,7 @@ def create_pipeline(**kwargs) -> Pipeline:
             ),
             node(
                 func=save_model,
-                inputs="regressor",
+                inputs=["regressor"],
                 outputs=None,
                 name="save_model_node",
             ),

@@ -39,7 +39,6 @@ def preprocess(df , random_state:int, constring):
     X_validate.to_sql('validate', db, if_exists='replace', index=False)
     
     
-    X_train = X_train.drop("diabetes", axis=1)
     X_test = X_test.drop("diabetes", axis=1)
     X_validate = X_validate.drop('diabetes', axis=1)
     

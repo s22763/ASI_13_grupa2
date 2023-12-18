@@ -6,18 +6,21 @@ from autogluon.tabular import TabularDataset, TabularPredictor
 import pickle
 import wandb
 
-def create_model(X_train, y_train, model_type):
+def create_model(X_train, y_train, model_type, hyper):
 
     clf = None
     if(model_type == "autogluon"):
+
         label = 'diabetes'
         dataset = TabularDataset(X_train)
         clf = TabularPredictor(label)
-        clf.fit(dataset)
+        clf.fit(dataset, hyperparameters=hyper)
     elif(model_type == "regression"):
+        X_train = X_train.drop("diabetes", axis=1)
         clf = LogisticRegression()
         clf.fit(X_train, y_train)
-    else:               
+    else:            
+        X_train = X_train.drop("diabetes", axis=1)   
         clf = RandomForestClassifier(n_estimators=100, random_state=42)
         clf.fit(X_train, y_train)
      
