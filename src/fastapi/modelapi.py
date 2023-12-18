@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from pathlib import Path
+
 app = FastAPI()
 
 

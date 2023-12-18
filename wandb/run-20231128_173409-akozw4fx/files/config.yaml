@@ -16,11 +16,11 @@ _wandb:
   desc: null
   value:
     python_version: 3.10.0
-    cli_version: 0.16.1
+    cli_version: 0.16.0
     framework: sklearn
     is_jupyter_run: false
     is_kaggle_kernel: false
-    start_time: 1702349535.858703
+    start_time: 1701189249.636906
     t:
       1:
       - 5
@@ -38,7 +38,7 @@ _wandb:
       - 16
       - 23
       4: 3.10.0
-      5: 0.16.1
+      5: 0.16.0
       8:
       - 3
       - 5

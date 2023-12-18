@@ -11,8 +11,9 @@ def create_model(X_train, y_train, model_type):
     clf = None
     if(model_type == "autogluon"):
         label = 'diabetes'
+        dataset = TabularDataset(X_train)
         clf = TabularPredictor(label)
-        clf.fit(X_train)
+        clf.fit(dataset)
     elif(model_type == "regression"):
         clf = LogisticRegression()
         clf.fit(X_train, y_train)
@@ -37,6 +38,6 @@ def predict(X_validate, y_validate, clf):
     wandb.log({"accuracy": accuracy})
     return accuracy
     
-def save_model(clf:RandomForestClassifier):
+def save_model(clf):
     pickle.dump(clf, open('src\\fastapi\model.pkl', 'wb'))
     
