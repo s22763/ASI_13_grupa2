@@ -37,4 +37,6 @@ if st.button("predict"):
     df = pd.DataFrame(data=d)
     pred = model.predict(df)
     
+       
+
 st.header(pred)
