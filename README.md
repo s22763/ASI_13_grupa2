@@ -26,11 +26,19 @@ In order to get the best out of the template:
 * Don't commit data to your repository
 * Don't commit any credentials or your local configuration to your repository. Keep all your credentials and local configuration in `conf/local/`
 
+
+
 ## How to install dependencies
 
 Declare any dependencies in `src/requirements.txt` for `pip` installation and `src/environment.yml` for `conda` installation.
 
-To install them, run:
+To start project from `conda` is needed to be imported file `src/environment.yml` to Anaconda Navigator from UI or run from console:
+
+```
+conda env create -f environment.yml
+```
+
+To install them to other virtual environments on Python, run:
 
 ```
 pip install -r src/requirements.txt
