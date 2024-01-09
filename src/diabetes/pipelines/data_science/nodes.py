@@ -6,7 +6,7 @@ from autogluon.tabular import TabularDataset, TabularPredictor
 import pickle
 import wandb
 
-def create_model(X_train, y_train, model_type, hyper):
+def create_model(X_train, y_train, model_type, hyperparameters):
 
     clf = None
     if(model_type == "autogluon"):
@@ -14,7 +14,7 @@ def create_model(X_train, y_train, model_type, hyper):
         label = 'diabetes'
         dataset = TabularDataset(X_train)
         clf = TabularPredictor(label)
-        clf.fit(dataset, hyperparameters=hyper)
+        clf.fit(dataset, hyperparameters=hyperparameters)
     elif(model_type == "regression"):
         X_train = X_train.drop("diabetes", axis=1)
         clf = LogisticRegression()

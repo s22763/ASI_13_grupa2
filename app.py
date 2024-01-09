@@ -30,13 +30,16 @@ hba1c_level = st.text_input("hba1c_level")
 blood_glucose_level = st.text_input("blood_glucose_level")
 
 pred = None
+diabetResult = "nie wiadomo czy jest chory"
 
 if st.button("predict"):
     d = {"gender": [gender], "age": [age], "hypertension": [hypertension], "heart_disease": [heart_disease], "smoking_history": [smoking_history],
             "bmi": [bmi], "hba1c_level": [hba1c_level], "blood_glucose_level": [blood_glucose_level]}
     df = pd.DataFrame(data=d)
-    pred = model.predict(df)
-    
-       
+    pred = model.predict(df)[0]
+    if pred == 1:
+        diabetResult = "jest chory"
+    elif pred == 0:
+        diabetResult = "jest nie chory"
 
-st.header(pred)
+st.header(diabetResult)

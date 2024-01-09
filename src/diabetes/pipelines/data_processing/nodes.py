@@ -9,7 +9,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
 def download(host, database, user, password):
-    conn = psycopg2.connect(host=host, database=database, user=user, password=password)
+    conn = psycopg2.connect(host=host, database=database, user=user, password=password, port=5433)
     sql_query = 'SELECT * FROM health_data'
     df = pd.read_sql(sql_query, conn)
     conn.close()   

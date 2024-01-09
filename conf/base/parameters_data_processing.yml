@@ -8,8 +8,8 @@ configg: {
     }
 
 host: 'localhost'
-database: 'postgres'
+database: 'postgresCont'
 user: 'postgres'
 password: '123'
 
-constring: "postgresql://postgres:123@localhost/postgres"
+constring: "postgresql://postgres:123@localhost:5433/postgresCont"
