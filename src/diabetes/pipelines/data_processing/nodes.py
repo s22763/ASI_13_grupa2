@@ -4,7 +4,6 @@ from sklearn.model_selection import train_test_split
 from autogluon.tabular import TabularDataset, TabularPredictor
 import psycopg2
 import wandb
-from sqlalchemy import create_engine 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 

@@ -13,3 +13,4 @@ dependencies:
   - SQLAlchemy==2.0.23
   - streamlit==1.29.0
   - wandb==0.16.0
+  - sdv==1.9.0
