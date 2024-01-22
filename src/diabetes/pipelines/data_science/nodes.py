@@ -6,8 +6,7 @@ from autogluon.tabular import TabularDataset, TabularPredictor
 import pickle
 import wandb
 
-def create_model(X_train, y_train, model_type, hyperparameters):
-
+def create_model(X_train:pd.DataFrame, y_train:pd.DataFrame, model_type:str, hyperparameters):
     clf = None
     if(model_type == "autogluon"):
 
@@ -34,7 +33,6 @@ def create_model(X_train, y_train, model_type, hyperparameters):
     return clf
 
 def predict(X_validate, y_validate, clf):
-    
     y_pred = clf.predict(X_validate)
     wandb.sklearn.plot_confusion_matrix(y_validate, y_pred, ['diabetic', 'not diabetic'])   
     accuracy = accuracy_score(y_validate, y_pred)

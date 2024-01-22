@@ -8,7 +8,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         [
             node(
                 func=download,
-                inputs=['params:host','params:database','params:user','params:password'],
+                inputs=[],
                 outputs='diabetes_predictions',
                 name='download_diabetes_predictions_node'
             ),
@@ -20,7 +20,7 @@ def create_pipeline(**kwargs) -> Pipeline:
             ),
             node(
                 func=preprocess,
-                inputs=['diabetes_predictions', 'params:random_state', 'params:constring'],
+                inputs=['diabetes_predictions', 'params:random_state'],
                 outputs=['X_train', 'X_test', 'X_validate', 'y_train', 'y_test', 'y_validate'],
                 name='preprocess_diabetes_predictions_node'
             )
